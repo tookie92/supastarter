@@ -1,31 +1,30 @@
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs"
-import { redirect } from "next/navigation"
+
 import { cookies } from "next/headers"
-import Header from "./components/Header"
-import SidebarNavItem from "./components/SidebarNavItem"
-import Sidebar from "./components/Sidebar"
+import Hello from "./components/Hello";
+
+import { redirect } from "next/navigation";
+import MesCards from "./components/MesCards";
 
 
-async function otherlayout() {
-  const supabase = createServerComponentClient({cookies})
-  const {data:{session}} = await supabase.auth.getSession()
 
-  if(!session){
-      redirect("/")
+async function welcome() {
+  const supabase = createServerComponentClient({ cookies })
+  const { data: { session } } = await supabase.auth.getSession()
+  if (!session) {
+    redirect("/unauthenticated")
   }
+ 
   return (
-    <div className="flex h-screen ">
-      {/* Barre latérale */}
-      <div className="w-64 hidden lg:block">
-        <Sidebar />
-      </div>
-      
-      {/* Contenu principal */}
-      <div className="flex-1">
-        {/* Contenu principal du tableau de bord */}
-      </div>
+    <div className="flex flex-col w-full p-6 h-full bg-[#ECEFF4] rounded-md">
+     
+        <Hello />
+      <div className=" mt-11">
+        <MesCards/>
+     </div>
     </div>
+    
   )
 }
 
-export default otherlayout
+export default welcome

@@ -45,40 +45,47 @@ function AuthForm() {
      }
   }
   return (
-    <Card className=" w-full lg:w-[30%]">
-    <CardHeader>
-      <CardTitle>SicherHeim</CardTitle>
-      <CardDescription> {variant==="LOGIN"? "Please sign in":"Please Sign up"}</CardDescription>
-    </CardHeader>
-    <CardContent>
-    <div>
-    <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-3'>
-      <div className='flex flex-col gap-2'>
-        <Label htmlFor='email'>Email</Label>
-        <Input {...register("email")}/>
+    <div className=' w-full lg:w-[50%] flex flex-col justify-center'>
+      <div className='text-center flex flex-col gap-3'>
+        <div className=' text-5xl font-bold'>SicherHeim</div>
+        <div className=' mt-8 text-3xl font-semibold'>Hello Again !</div>
+        <div className=' font-light'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</div>
       </div>
-      <div className='flex flex-col gap-2'>
-        <Label htmlFor='password'>Password</Label>
-        <Input {...register("password")} type='password'/>
+      <Card className=" border-none shadow-none">
+      <CardHeader>
+        {/* <CardTitle>SicherHeim</CardTitle>
+        <CardDescription> {variant==="LOGIN"? "Please sign in":"Please Sign up"}</CardDescription> */}
+      </CardHeader>
+      <CardContent>
+      <div>
+      <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-3'>
+        <div className='flex flex-col gap-2'>
+          <Label htmlFor='email'>Email</Label>
+          <Input {...register("email")}/>
+        </div>
+        <div className='flex flex-col gap-2'>
+          <Label htmlFor='password'>Password</Label>
+          <Input {...register("password")} type='password'/>
+        </div>
+        
+          <Button className='w-full mt-11' type='submit' variant="primary">submit</Button>
+        
+      </form>
+      <div className=' mt-6 flex flex-col gap-2'>
+        <hr/>
+        <div className='flex gap-2'>
+            <div>
+              {variant==="LOGIN"? "Creer un compte?":"Deja un compte?"}
+            </div>
+            <div onClick={toggleVariant} className='hover:underline cursor-pointer hover:text-sky-500'>
+              {variant==="LOGIN"? "Sign up":"Sign in"}
+            </div>
+        </div>
       </div>
-      <div className='w-full justify-end flex'>
-        <Button type='submit'>submit</Button>
       </div>
-    </form>
-    <div className=' mt-6 flex flex-col gap-2'>
-      <hr/>
-      <div className='flex gap-2'>
-          <div>
-            {variant==="LOGIN"? "Creer un compte?":"Deja un compte?"}
-          </div>
-          <div onClick={toggleVariant} className='hover:underline cursor-pointer hover:text-sky-500'>
-            {variant==="LOGIN"? "Sign up":"Sign in"}
-          </div>
-      </div>
+      </CardContent>
+      </Card>
     </div>
-    </div>
-    </CardContent>
-     </Card>
   )
 }
 

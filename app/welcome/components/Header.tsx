@@ -1,17 +1,14 @@
+'use client'
+import { editProfile } from '@/app/actions/theprofile'
 import { Button } from '@/components/ui/button'
 import React from 'react'
 
-function Header() {
+function Headerla() {
   return (
-    <div className='flex  h-[75px]  justify-between  shadow-sm p-6'>
-        <div>
-            hello
-        </div>
-        <div>
-            <Button>bu</Button>
-        </div>
-    </div>
+    <Button onClick={()=>{
+      editProfile("Joseph Ikinda")
+  }}></Button>
   )
 }
 
-export default Header
+export default Headerla
