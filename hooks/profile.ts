@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 
 
 export const useAuth = ()=>{
-     const supabase = createClientComponentClient()
+     const supabase = createClientComponentClient<Database>()
      const {toast} = useToast()
      const router = useRouter()
 

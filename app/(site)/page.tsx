@@ -3,9 +3,10 @@ import AuthForm from '@/components/myComponents/AuthForm';
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
 import { redirect } from 'next/navigation';
 import { cookies } from 'next/headers';
+import type { Database } from '@/types_db';
 
 async function Home(): Promise<JSX.Element> {
-  const supabase = createServerComponentClient({ cookies });
+  const supabase = createServerComponentClient<Database>({ cookies });
   const { data: { session } } = await supabase.auth.getSession();
 
   if (session) {

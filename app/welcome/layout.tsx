@@ -1,5 +1,4 @@
 import { FaHome } from "react-icons/fa"
-import{IoMdSettings} from "react-icons/io"
 import Logout from "./components/Logout"
 import { SidebarNav } from "./components/SidebarNav"
 import { Toaster } from "@/components/ui/toaster"
@@ -19,7 +18,11 @@ const sidebarNavItems = [
    
   ]
 
-function DashboardLayout({children}:{children: React.ReactNode}) {
+export default function DashboardLayout({
+    children
+  }: {
+    children: React.ReactNode
+  }) {
   return (
       <section className=' mx-auto px-11  min-h-screen'>
           <div className="flex   w-full flex-col space-y-8 lg:flex-row lg:space-x-12 lg:space-y-0">
@@ -47,4 +50,3 @@ function DashboardLayout({children}:{children: React.ReactNode}) {
   )
 }
 
-export default DashboardLayout
