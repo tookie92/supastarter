@@ -2,6 +2,8 @@ import { FaHome } from "react-icons/fa"
 import Logout from "./components/Logout"
 import { SidebarNav } from "./components/SidebarNav"
 import { Toaster } from "@/components/ui/toaster"
+import { Button } from "@/components/ui/button"
+import SidebarNavDesign from "./components/SidebarNavDesign"
 const sidebarNavItems = [
     {
       title: "Profile",
@@ -24,29 +26,38 @@ export default function DashboardLayout({
     children: React.ReactNode
   }) {
   return (
-      <section className=' mx-auto px-11  min-h-screen'>
-          <div className="flex   w-full flex-col space-y-8 lg:flex-row lg:space-x-12 lg:space-y-0">
-          <aside className="-mx-4 min-h-screen lg:w-[15%] flex flex-col ">
-              <div className='basis-1/4 mt-12 text-2xl font-bold text-center'>
-                Logo
-              </div>
-            <SidebarNav className='basis-1/2' items={sidebarNavItems} />
-            <div className='flex basis-1/6 items-end'>
-              <Logout/>
+    <div className="flex h-screen bg-gray-200">
+       
+       <div className="bg-white w-64 hidden md:flex flex-col p-8">
+            <div className="h-16  text-black flex items-start  justify-center p-8 basis-1/4">
+                <h1>Logo</h1>
             </div>
-         </aside>
-            <div className="flex-1 mx-auto max-w-full">
-                <div className="flex flex-col h-screen p-14 ">
-                <div>
+        <SidebarNav className=" basis-2/4 mt-11" items={sidebarNavItems} />
+        <div className="basis-1/4 flex flex-col justify-end">
+          <Logout/>
+        </div>
+        
+        </div>
+        
+        <div className="flex-1 flex flex-col overflow-hidden">
+            {/* <header className="p-4 bg-white border-b border-gray-200">
+                <div className="flex items-center justify-between">
+                    <h2 className="text-lg font-semibold">Dashboard</h2>
+                    <div className="flex items-center space-x-4">
+                        <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md">Button 1</button>
+                        <button className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-md">Button 2</button>
+                    </div>
+                </div>
+            </header> */}
+            <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
+                <div className="container mx-auto px-6 py-8">
+                    {/* <h3 className="text-lg font-semibold">Main Content</h3> */}
                     {children}
                 </div>
-                </div>
-              </div>
-             
-            
-          </div>
-          <Toaster/>
-      </section>
+            </main>
+      </div>
+      <Toaster/>
+    </div>
   )
 }
 

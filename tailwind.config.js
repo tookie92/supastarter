@@ -70,12 +70,18 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         wiggle: 'wiggle 1s ease-in-out 4',
+        scale: 'scale 1s ease-in-out 4'
       },
       keyframes: {
         wiggle: {
           '0%, 100%': { transform: 'rotate(-3deg)' },
           '50%': { transform: 'rotate(3deg)' },
+        },
+        scale: {
+          '0%, 100%': { transform: 'scale(0.97)' },
+          '50%': { transform: 'scale(1.03)' },
         }
+
       }
     },
   },

@@ -23,7 +23,7 @@ async function Hello() {
         <div className='font-semibold text-xl flex gap-3'>
          
           <div>Hello {data?.full_name || "No Name"} ! </div>
-          <div className=' animate-wiggle'>👋🏾</div>
+          <div className=' animate-wiggle animate-scale'>👋🏾</div>
         </div>
             <div className='font-light text-sm'>Happy to see you</div>
         </div>
