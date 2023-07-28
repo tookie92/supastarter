@@ -4,6 +4,7 @@ import { cookies } from 'next/headers'
 import{HiOutlineBell} from "react-icons/hi"
 import { Input } from '@/components/ui/input'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
+import SearchBar from './SearchBar'
 
 
 
@@ -28,8 +29,7 @@ async function Hello() {
             <div className='font-light text-sm'>Happy to see you</div>
         </div>
         <div className='flex gap-2'>
-            <Input/>
-            <Button className='bg-white text-black shadow-sm'><HiOutlineBell size={20}/></Button>
+           <SearchBar/>
         </div>
     </div>
   )
